@@ -7,6 +7,8 @@ def calculate_present_value_annuity(monthly_payment, annual_rate, years):
     :param years: The total number of years the payments will be made.
     :return: The present value of the annuity.
     """
+    if annual_rate <= 0 or years <= 0 or monthly_payment <= 0:
+        raise ValueError("Annual rate, years, and monthly payment must be positive values.")
     monthly_rate = annual_rate / 12  # Convert annual rate to monthly
     number_of_payments = years * 12  # Total number of payments
 
